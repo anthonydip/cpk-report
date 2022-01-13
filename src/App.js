@@ -46,6 +46,4 @@ const App = () => {
   );
 }
 
-{/* <Title>CpK Interior Products Inc.</Title> */}
-
 export default App;
