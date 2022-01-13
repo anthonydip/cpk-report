@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 
-function App() {
+// Import logo
+import logo from './assets/logo.png';
+
+// Import components
+import Header from './components/Header/Header';
+import { GlobalStyles } from './components/Theme/GlobalStyles';
+import { lightTheme, darkTheme } from './components/Theme/Themes';
+
+// Styled components
+const Title = styled.h1`
+  font-family: 'Inter', sans-serif;
+  font-size: 3.75rem;
+  font-weight: 800;
+  text-align: center;
+`;
+
+const Logo = styled.div`
+  display: flex;
+  justify-content: center;
+`;
+
+const App = () => {
+  const [theme, setTheme] = useState(`light`);
+
+  // Light and dark theme state toggler
+  const toggleTheme = () => {
+    theme === 'light' ? setTheme('dark') : setTheme('light');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === 'light' ? lightTheme: darkTheme}>
+      <GlobalStyles/>
+      <div>
+        <Header theme={theme} toggleTheme={toggleTheme} />
+
+        <Logo>
+          <a href="https://cpkip.com/" target="_blank"><img src={logo} alt="Logo"/></a>
+        </Logo>
+        
+        <Title>CpK Interior Products Inc.</Title>
+      </div>
+    </ThemeProvider>
   );
 }
+
+{/* <Title>CpK Interior Products Inc.</Title> */}
 
 export default App;
