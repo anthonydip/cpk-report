@@ -37,7 +37,7 @@ const App = () => {
         <Header theme={theme} toggleTheme={toggleTheme} />
 
         <Logo>
-          <a href="https://cpkip.com/" target="_blank"><img src={logo} alt="Logo"/></a>
+          <a href="https://cpkip.com/" target="_blank" rel="noreferrer"><img src={logo} alt="Logo"/></a>
         </Logo>
         
         <Title>CpK Interior Products Inc.</Title>
