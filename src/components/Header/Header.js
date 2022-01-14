@@ -1,8 +1,10 @@
 import styled from 'styled-components';
+
+// Import components
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 
-// Import Icons
+// Import icons
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import GitHubIcon from '@mui/icons-material/GitHub';
